@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mymod:block/circulation_sens_interdit",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mymod:block/circulation_sens_interdit"
+    },
+    "facing=south": {
+      "model": "mymod:block/circulation_sens_interdit",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mymod:block/circulation_sens_interdit",
+      "y": 270
+    }
+  }
+}

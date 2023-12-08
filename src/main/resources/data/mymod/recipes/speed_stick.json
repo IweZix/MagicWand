@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "f": {
+      "item": "minecraft:feather"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "fr ",
+    " sf",
+    "fs "
+  ],
+  "result": {
+    "item": "mymod:speed_stick"
+  }
+}

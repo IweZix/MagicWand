@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:rabbit_foot"
+    },
+    "@": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " # ",
+    " @ ",
+    " @ "
+  ],
+  "result": {
+    "item": "mymod:jump_stick"
+  }
+}

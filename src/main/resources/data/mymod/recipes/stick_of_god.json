@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "h": {
+      "item": "mymod:heal_stick"
+    },
+    "s": {
+      "item": "mymod:speed_stick"
+    },
+    "f": {
+      "item": "mymod:strong_stick"
+    },
+    "b": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    "shf",
+    " b ",
+    " b "
+  ],
+  "result": {
+    "item": "mymod:stick_of_god"
+  }
+}

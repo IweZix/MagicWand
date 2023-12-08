@@ -1,0 +1,19 @@
+{
+  "item.mymod.my_item": "My Item",
+  "item.mymod.heal_stick": "Heal stick",
+  "item.mymod.speed_stick": "Speed stick",
+  "item.mymod.strong_stick": "Strong stick",
+  "item.mymod.jump_stick": "Jump stick",
+  "item.mymod.stick_of_god": "Stick of God",
+
+  "block.mymod.my_block": "My Block",
+  "block.mymod.poteau": "Poteau de signalisation",
+  "block.mymod.circulation_ceder_le_passage": "Ceder le passage",
+  "block.mymod.circulation_interdite": "Circulation interdite",
+  "block.mymod.circulation_sens_interdit": "Circulation sens interdit",
+  "block.mymod.circulation_stop": "Stop",
+
+  "itemGroup.mytab": "MyMod",
+  "itemGroup.stickTab": "Stick tab",
+  "itemGroup.signalisationTab": "Signalisation tab"
+}

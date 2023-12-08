@@ -1,0 +1,36 @@
+
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT"
+[[mods]]
+modId="mymod"
+version="1.0"
+
+displayName="MyMod"
+# ! ajouter le logo dans ../resources/
+logoFile="examplemod.png"
+# ! ajouter les personnes ayant aider au developpement de MyMod
+credits=""
+authors="IweZix"
+
+# ! ajouter la description de MyMod
+description='''
+'''
+
+[[dependencies.mymod]]
+
+modId="forge"
+
+mandatory=true
+
+versionRange="[43,)"
+
+ordering="NONE"
+
+side="BOTH"
+[[dependencies.mymod]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.19.2,1.20)"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mymod:block/circulation_ceder_le_passage",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mymod:block/circulation_ceder_le_passage"
+    },
+    "facing=south": {
+      "model": "mymod:block/circulation_ceder_le_passage",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mymod:block/circulation_ceder_le_passage",
+      "y": 270
+    }
+  }
+}

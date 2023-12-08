@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:golden_apple"
+    },
+    "@": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " # ",
+    " @ ",
+    "   "
+  ],
+  "result": {
+    "item": "mymod:heal_stick"
+  }
+}

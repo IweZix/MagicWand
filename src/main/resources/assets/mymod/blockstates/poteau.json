@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mymod:block/poteau",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mymod:block/poteau"
+    },
+    "facing=south": {
+      "model": "mymod:block/poteau",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mymod:block/poteau",
+      "y": 270
+    }
+  }
+}
