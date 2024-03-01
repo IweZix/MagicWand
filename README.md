@@ -13,6 +13,7 @@ Un item est créer dans mymod/item/MyItem.java <br>
 - Un block custom est créer dans mymod/block/custom/ + nomDuBlock + Block <br>
 - Ensuite, il faut créer le block dans mymod/block/MyBlocks.java <br>
   En utilisant la classe nomDuBlock + Block créer au par avant
+- 
 ## Lang
 Anglais : mymod/lang/en_us.lang <br>
 Français : mymod/lang/fr_fr.lang <br>

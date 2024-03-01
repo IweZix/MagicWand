@@ -11,18 +11,43 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+/**
+ * Item give a speed effect for 30 seconds
+ */
 public class SpeedStickItem extends Item {
 
-        public SpeedStickItem(Properties p_41383_) {
-            super(p_41383_);
-        }
+  /**
+   * Constructor
+   *
+   * @param p_41383_ Properties
+   */
+  public SpeedStickItem(Properties p_41383_) {
+    super(p_41383_);
+  }
 
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        // donne un effet de speed
-        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600));
-        // ajout du cooldown
-        player.getCooldowns().addCooldown(this, 1200);
-        return super.use(level, player, interactionHand);
+  /**
+   * Use the item with left click
+   *
+   * @param level           Level
+   * @param player          Player who use the item
+   * @param interactionHand InteractionHand
+   * @return InteractionResultHolder<ItemStack>
+   */
+  public InteractionResultHolder<ItemStack> use(Level level, Player player,
+      InteractionHand interactionHand) {
+
+    if (player.getCooldowns().isOnCooldown(this)) {
+      player.sendSystemMessage(Component.literal(
+          ChatFormatting.RED + "Vous ne pouvez pas utilser cette item il est cooldown")
+      );
     }
+
+    player.addEffect(
+        new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600)
+    );
+
+    player.getCooldowns().addCooldown(this, 1200);
+    return super.use(level, player, interactionHand);
+  }
 
 }

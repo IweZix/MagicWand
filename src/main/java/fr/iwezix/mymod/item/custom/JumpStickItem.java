@@ -1,5 +1,7 @@
 package fr.iwezix.mymod.item.custom;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -9,17 +11,42 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+/**
+ * Item give a jump effect for 30 seconds
+ */
 public class JumpStickItem extends Item {
 
-    public JumpStickItem(Properties p_41383_) {
-        super(p_41383_);
+  /**
+   * Constructor
+   *
+   * @param p_41383_ Properties
+   */
+  public JumpStickItem(Properties p_41383_) {
+    super(p_41383_);
+  }
+
+  /**
+   * Use the item with left click
+   *
+   * @param level           Level
+   * @param player          Player who use the item
+   * @param interactionHand InteractionHand
+   * @return InteractionResultHolder<ItemStack>
+   */
+  public InteractionResultHolder<ItemStack> use(Level level, Player player,
+      InteractionHand interactionHand) {
+
+    if (player.getCooldowns().isOnCooldown(this)) {
+      player.sendSystemMessage(Component.literal(
+          ChatFormatting.RED + "Vous ne pouvez pas utilser cette item il est cooldown")
+      );
     }
 
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        // 600/20 = 30s
-        player.addEffect(new MobEffectInstance(MobEffects.JUMP, 600));
-        // 1200/20 = 60s
-        player.getCooldowns().addCooldown(this, 1200);
-        return super.use(level, player, interactionHand);
-    }
+    player.addEffect(
+        new MobEffectInstance(MobEffects.JUMP, 600)
+    );
+
+    player.getCooldowns().addCooldown(this, 1200);
+    return super.use(level, player, interactionHand);
+  }
 }

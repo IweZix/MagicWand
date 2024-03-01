@@ -12,22 +12,44 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+/**
+ * Item give a regen effect for 30 seconds
+ */
 public class HealStickItem extends Item {
 
-    public HealStickItem(Properties p_41383_) {
-        super(p_41383_);
+  /**
+   * Constructor
+   *
+   * @param p_41383_ Properties
+   */
+  public HealStickItem(Properties p_41383_) {
+    super(p_41383_);
+  }
+
+  /**
+   * Use the item with left click
+   *
+   * @param level           Level
+   * @param player          Player who use the item
+   * @param interactionHand InteractionHand
+   * @return InteractionResultHolder<ItemStack>
+   */
+  public InteractionResultHolder<ItemStack> use(Level level, Player player,
+      InteractionHand interactionHand) {
+    // si cooldown pas encore terminer
+    if (player.getCooldowns().isOnCooldown(this)) {
+      // envoie un message
+      player.sendSystemMessage(Component.literal(
+          ChatFormatting.RED + "Vous ne pouvez pas utilser cette item il est cooldown"));
     }
 
-    // Clique droit
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        // donne un effet de regen
-        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600));
-        // ajout du cooldown
-        player.getCooldowns().addCooldown(this, 1200);
-        // si cooldown pas encore terminer
-        if (player.getCooldowns().isOnCooldown(this))
-            // envoie un message
-            player.sendSystemMessage(Component.literal(ChatFormatting.RED + "Vous ne pouvez pas utilser cette item il est cooldown"));
-        return super.use(level, player, interactionHand);
-    }
+    // donne un effet de regen de 30 secondes
+    player.addEffect(
+        new MobEffectInstance(MobEffects.REGENERATION, 600)
+    );
+
+    // ajout du cooldown de 60 secondes
+    player.getCooldowns().addCooldown(this, 1200);
+    return super.use(level, player, interactionHand);
+  }
 }

@@ -27,17 +27,18 @@ import org.slf4j.Logger;
 
 @Mod(MyMod.MODID)
 public class MyMod {
-    public static final String MODID = "mymod";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
-    public MyMod() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+  public static final String MODID = "mymod";
+  private static final Logger LOGGER = LogUtils.getLogger();
 
-        LOGGER.info("MyMod starting...");
+  public MyMod() {
+    IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        MyModItem.register(modEventBus);
-        MyBlock.register(modEventBus);
+    LOGGER.info("MyMod starting...");
 
-        MinecraftForge.EVENT_BUS.register(this);
-    }
+    MyModItem.register(modEventBus);
+    MyBlock.register(modEventBus);
+
+    MinecraftForge.EVENT_BUS.register(this);
+  }
 }
