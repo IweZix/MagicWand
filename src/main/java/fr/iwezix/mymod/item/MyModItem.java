@@ -39,6 +39,9 @@ public class MyModItem {
           )
       );
 
+  /**
+   * Register HealStick in the game.
+   */
   public final static RegistryObject<Item> HEAL_STICK =
       ITEMS.register("heal_stick", () ->
           new HealStickItem(
@@ -49,6 +52,9 @@ public class MyModItem {
           )
       );
 
+  /**
+   * Register SpeedStick in the game.
+   */
   public final static RegistryObject<Item> SPEED_STICK =
       ITEMS.register("speed_stick", () ->
           new SpeedStickItem(
@@ -59,6 +65,9 @@ public class MyModItem {
           )
       );
 
+  /**
+   * Register StrongStick in the game.
+   */
   public final static RegistryObject<Item> STRONG_STICK =
       ITEMS.register("strong_stick", () ->
           new StrongStickItem(
@@ -69,6 +78,9 @@ public class MyModItem {
           )
       );
 
+  /**
+   * Register JumpStick in the game.
+   */
   public final static RegistryObject<Item> JUMP_STICK =
       ITEMS.register("jump_stick", () ->
           new JumpStickItem(
@@ -79,9 +91,38 @@ public class MyModItem {
           )
       );
 
+  /**
+   * Register StickOfGod in the game.
+   */
   public final static RegistryObject<Item> STICK_OF_GOD =
       ITEMS.register("stick_of_god", () ->
           new StickOfGodItem(
+              new Item.Properties()
+                  .tab(MyModCreativeTabs.STICK_TAB)
+                  .durability(5)
+                  .rarity(Rarity.EPIC)
+          )
+      );
+
+  /**
+   * Register FireStick in the game.
+   */
+  public final static RegistryObject<Item> FIRE_STICK =
+      ITEMS.register("fire_stick", () ->
+          new FireStickItem(
+              new Item.Properties()
+                  .tab(MyModCreativeTabs.STICK_TAB)
+                  .durability(5)
+                  .rarity(Rarity.EPIC)
+          )
+      );
+
+  /**
+   * Register FreezeStick in the game.
+   */
+  public final static RegistryObject<Item> FREEZE_STICK =
+      ITEMS.register("teleportation_stick", () ->
+          new TeleportationStickItem(
               new Item.Properties()
                   .tab(MyModCreativeTabs.STICK_TAB)
                   .durability(5)
