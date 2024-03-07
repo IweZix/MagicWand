@@ -36,6 +36,11 @@ public class HealStickItem extends Item {
   public InteractionResultHolder<ItemStack> use(Level level, Player player,
       InteractionHand interactionHand) {
     // si cooldown pas encore terminer
+    if (player.getCooldowns().isOnCooldown(HealStickItem.this)) {
+      // envoie un message
+      player.sendSystemMessage(Component.literal(
+          ChatFormatting.RED + "Vous ne pouvez pas utilser cette item il est cooldown"));
+    }
 
     // donne un effet de regen de 30 secondes
     player.addEffect(
@@ -44,12 +49,6 @@ public class HealStickItem extends Item {
 
     // ajout du cooldown de 60 secondes
     player.getCooldowns().addCooldown(this, 1200);
-    
-    if (player.getCooldowns().isOnCooldown(this)) {
-      // envoie un message
-      player.sendSystemMessage(Component.literal(
-          ChatFormatting.RED + "Vous ne pouvez pas utilser cette item il est cooldown"));
-    }
     return super.use(level, player, interactionHand);
   }
 }
